@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d0f">
+<title>ТИХИЙ КОНТРАКТ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="game"></canvas>
+
+  <!-- ═══ HUD ═══ -->
+  <div id="hud">
+    <div id="top">
+      <div class="col">
+        <div id="obj"></div>
+      </div>
+      <div class="col right">
+        <div id="timer">00:00</div>
+        <div id="diff"></div>
+      </div>
+    </div>
+
+    <canvas id="map" width="150" height="110"></canvas>
+
+    <div id="bars">
+      <div class="bar"><span>ЗДОРОВЬЕ</span><div class="m"><i id="hp"></i></div></div>
+      <div class="bar"><span>ТРЕВОГА</span><div class="m"><i id="susp" class="s"></i></div></div>
+      <div class="bar"><span>ШУМ</span><div class="m"><i id="noise" class="n"></i></div></div>
+    </div>
+
+    <div id="state"></div>
+    <div id="prompt"></div>
+    <div id="log"></div>
+  </div>
+
+  <!-- ═══ УПРАВЛЕНИЕ ═══ -->
+  <div id="stickzone"><div id="stickbase"><div id="stickknob"></div></div></div>
+  <div id="btns">
+    <button class="rb" id="bAct">ДЕЙСТВИЕ</button>
+    <button class="rb" id="bUse">ПРИМЕНИТЬ</button>
+    <button class="rb small" id="bCrouch">СЕСТЬ</button>
+    <button class="rb small" id="bRun">БЕГ</button>
+    <button class="rb small" id="bBag">РЮКЗАК</button>
+  </div>
+  <div id="slot"></div>
+
+  <!-- ═══ ЭКРАНЫ ═══ -->
+  <div class="screen on" id="menu">
+    <div class="eb">контракт 01 · отель «меридиан»</div>
+    <h1>ТИХИЙ<br>КОНТРАКТ</h1>
+    <p>Проникнуть. Узнать. Устранить. Уйти так, чтобы никто не понял, что кто-то приходил.</p>
+    <div class="eb">сложность</div>
+    <div id="diffs"></div>
+    <button class="big" id="bStart">НАЧАТЬ</button>
+    <button class="big ghost" id="bLoad">ЗАГРУЗИТЬ</button>
+    <small>Джойстик слева — движение. Справа: действие, применить предмет, присесть, бег, рюкзак.</small>
+  </div>
+
+  <div class="screen" id="brief">
+    <div class="eb">брифинг</div>
+    <h2>ОТЕЛЬ «МЕРИДИАН», 03:40</h2>
+    <p><b>Цель:</b> Аркадий Вельш, занимает кабинет в северном крыле. Личная охрана, камеры, ночная смена персонала.</p>
+    <ul>
+      <li>Собрать <b>две папки документов</b> — они в серверной и в кабинете директора.</li>
+      <li>Устранить цель.</li>
+      <li>Уйти через парковку или чёрный ход.</li>
+    </ul>
+    <p class="q">Костюм гостя не пустит вас в служебные зоны. Форма персонала — не пустит в охраняемые. Своих узнают вблизи: держитесь от коллег по маскировке подальше.</p>
+    <button class="big" id="bGo">ВЫХОЖУ</button>
+  </div>
+
+  <div class="screen" id="bag">
+    <div class="eb">рюкзак</div>
+    <h2>СНАРЯЖЕНИЕ</h2>
+    <div id="bagList"></div>
+    <button class="big" id="bClose">ЗАКРЫТЬ</button>
+  </div>
+
+  <div class="screen" id="fin">
+    <div class="eb" id="fEb"></div>
+    <h1 id="fT"></h1>
+    <div id="fStats"></div>
+    <button class="big" id="bAgain">ЕЩЁ РАЗ</button>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
